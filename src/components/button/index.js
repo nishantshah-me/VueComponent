@@ -1,3 +1,3 @@
 import NButton from "./NButton"
 
-export default {NButton}
+export default { NButton }

@@ -1,6 +1,6 @@
 {
   "name": "vue-component-vanilla",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/vue-component-vanilla.common.js",
   "module": "dist/vue-component-vanilla.umd.min.js",
   "author": "Nishant Shah",
@@ -11,7 +11,10 @@
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build:old": "vue-cli-service build",
+    "build": "npm run build:lib && npm run build:style",
+    "build:lib": "vue-cli-service build --target lib --name vue-component-vanilla src/index.js",
+    "build:style": "postcss src/tailwind.css -o dist/styles.css",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -28,6 +31,7 @@
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
     "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
     "tailwindcss": "^3.2.7"
   },
   "eslintConfig": {

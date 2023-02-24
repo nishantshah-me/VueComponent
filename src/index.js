@@ -1,15 +1,15 @@
 import * as components from './components';
 
 const componentsList = components?.default;
-const FloridaComponents = {
+const NComponents = {
   install(Vue) {
     Object.keys(componentsList).forEach(name => {
       Vue.component(name, componentsList[name]);
     })
   },
 };
-export default FloridaComponents;
+export default NComponents;
 
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(FloridaComponents);
+  window.Vue.use(NComponents);
 }

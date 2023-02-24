@@ -1,3 +1,3 @@
-import NButton from './Button/NButton.vue'
+import NButton from './button/NButton.vue'
 
 export default { NButton }
