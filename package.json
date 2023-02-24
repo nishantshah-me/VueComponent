@@ -1,12 +1,11 @@
 {
   "name": "vue-component-vanilla",
-  "version": "0.1.1",
+  "version": "0.1.7",
   "main": "dist/vue-component-vanilla.common.js",
-  "module": "dist/vue-component-vanilla.umd.min.js",
   "author": "Nishant Shah",
   "description": "## Project setup ``` npm install ```",
   "files": [
-    "dist/*.{js,css}"
+    "dist/*.{map,js,css}"
   ],
   "private": false,
   "scripts": {
@@ -15,7 +14,9 @@
     "build": "npm run build:lib && npm run build:style",
     "build:lib": "vue-cli-service build --target lib --name vue-component-vanilla src/index.js",
     "build:style": "postcss src/tailwind.css -o dist/styles.css",
-    "lint": "vue-cli-service lint"
+    "build:npm": "vue-cli-service build --target lib --name vue-component-vanilla src/components/**/*.vue && npm run build:style",
+    "lint": "vue-cli-service lint",
+    "build:package": "vue-cli-service build --target lib --name vue-component-vanilla ./src/index.js && npm run build:style"
   },
   "dependencies": {
     "core-js": "^3.8.3",
