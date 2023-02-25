@@ -21,6 +21,7 @@
       duration-500
       ease-linear
       "
+      @click="say('hello')"
     :class="{ 'w-full': props.expanded }"
   ><slot />
   </button>
@@ -35,4 +36,18 @@ const props = defineProps({
     default: false,
   },
 })
+
+  
+
+</script>
+
+<script>
+
+export default{
+  methods: {
+  say(message){
+    console.log(message)
+  }
+} 
+}
 </script>
